@@ -8,11 +8,11 @@ const client = new twilio(accountSid, authToken);
 const app = express();
 const schedule = require('node-schedule');
 
-var date = new Date(2017, 11, 6, 15, 42, 0);
+var date = new Date(2017, 11, 7, 8, 45, 0);
 
 var j = schedule.scheduleJob(date, function(){
   client.messages.create({
-      body: 'Please rate the content of the xxx program by responding with 5 (awesome), 4 (good), 3 (ok), 2 (not helpful), 1 (waste of time)',
+      body: 'Please rate the content of this workshop by responding with: \n\t5 (awesome) \n\t4 (good) \n\t3 (ok) \n\t2 (not helpful) \n\t1 (waste of time) \n\t0 (did not attend)',
       to: '+13035793384', // Text this number
       from: '+17205730412' // From a valid Twilio number
     })
